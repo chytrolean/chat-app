@@ -1,8 +1,8 @@
-
 const chatForm = document.querySelector('#chat-form')
 const chatMessage = document.querySelector('.chat-messages')
 const roomName = document.querySelector('#room-name')
 const userList = document.querySelector('#users')
+
 
 //Get username
 const { username, room } = Qs.parse(location.search, {
@@ -45,11 +45,21 @@ chatForm.addEventListener('submit', e => {
 //ouput message to DOM
 function outputMessage(message){
     const div = document.createElement('div');
+    let result = message.text
+        .replaceAll(':D',' &#128512;')
+        .replaceAll(':*',' &#128536;')
+        .replaceAll(':)',' &#128578;')
+        .replaceAll(':(',' &#128577;')
+        .replaceAll(':/',' &#128533;')
+        .replaceAll('8)',' &#128526;')
+
+        div.innerHTML = `<p class="meta">${message.username}<span>${message.time}</span></p>
+        <p class="text">
+            ${result}
+        </p>`;
+    
+ 
     div.classList.add('message');
-    div.innerHTML = `<p class="meta">${message.username}<span>${message.time}</span></p>
-    <p class="text">
-        ${message.text}
-    </p>`;
     document.querySelector('.chat-messages').appendChild(div)
 }
 //room name to DOM

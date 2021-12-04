@@ -44,6 +44,7 @@ a {
 	max-width: 1100px;
 	margin: 30px auto;
 	background: linear-gradient(54deg,rgba(255,255,255,.2), rgba(255,255,255,.4));
+	border-radius: 5px;
 	overflow: hidden;
 	box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1);
 }
@@ -98,7 +99,7 @@ a {
 }
 .chat-messages {
 	padding: 30px;
-	max-height: 400px;
+	height: 400px;
 	overflow: auto;
 	background: transparent;
 }
@@ -209,10 +210,29 @@ a {
 }
 @media (max-width: 700px) {
 	.chat-main {
-		display: block;
+		display: flex;
+		flex-direction: column;
+	}
+	.chat-sidebar{
+		flex-grow: 1;
+		padding: 20px;
+		height: 50px;
+		transition: height .5s;
+	}
+	.chat-sidebar ul{
+		height: 120px;
+	}
+	.chat-sidebar.active{
+		height: auto;
+	}
+	.chat-container{
+		margin: auto;
+	}
+	.chat-messages{
+		max-height: 400px;
+	}
+	.chat-messages.active{
+		max-height: 150px;
 	}
 
-	.chat-sidebar {
-		display: none;
-	}
 }
