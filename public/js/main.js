@@ -53,7 +53,7 @@ function outputMessage(message){
         .replaceAll(':|',' &#128528;')
         .replaceAll('8)',' &#128526;')
 
-        div.innerHTML = `<p class="meta">${message.username} ' ' <span>${message.time}</span></p>
+        div.innerHTML = `<p class="meta">${message.username}<span>${message.time}</span></p>
         <p class="text">
             ${result}
         </p>`;
