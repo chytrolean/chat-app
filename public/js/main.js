@@ -50,7 +50,7 @@ function outputMessage(message){
         .replaceAll(':*',' &#128536;')
         .replaceAll(':)',' &#128578;')
         .replaceAll(':(',' &#128577;')
-        .replaceAll(':/',' &#128533;')
+        .replaceAll(':|',' &#128528;')
         .replaceAll('8)',' &#128526;')
 
         div.innerHTML = `<p class="meta">${message.username}<span>${message.time}</span></p>
