@@ -126,6 +126,7 @@ a {
 }
 
 .chat-messages .message .meta span {
+	margin-left: 5px;
 	color: #777;
 }
 
